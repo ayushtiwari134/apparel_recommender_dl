@@ -33,6 +33,18 @@ To run this project locally, follow these steps:
     ```bash
     pip install -r requirements.txt
     ```
+## Demo
+
+![App Screenshot 1](demo/)
+
+*Replace `path/to/screenshot1.png` with the relative or absolute path to your first screenshot. Add a brief description or caption for the first screenshot.*
+
+![App Screenshot 2](path/to/screenshot2.png)
+
+*Replace `path/to/screenshot2.png` with the relative or absolute path to your second screenshot. Add a brief description or caption for the second screenshot.*
+
+<!-- Add more screenshots and descriptions as needed -->
+
 
 ## Usage
 
