@@ -10,7 +10,9 @@ from tensorflow.keras.layers import GlobalMaxPooling2D
 from numpy.linalg import norm
 import pickle
 from sklearn.neighbors import NearestNeighbors
-
+import streamlit as st
+import os
+from PIL import Image
 
 
 # resnet model
@@ -27,7 +29,7 @@ model = Sequential(
 )
 
 features_list = pickle.load(open("features.pkl", "rb"))
-
+filenames = pickle.load(open("filenames.pkl", "rb"))
 
 def predict(img_path):
     img = image.load_img(img_path, target_size=(224, 224))
@@ -39,11 +41,46 @@ def predict(img_path):
     features = features.flatten()
     return features
 
-path = 'images\1164.jpg'
 
-neighbours = NearestNeighbors(n_neighbors=5, algorithm="brute", metric="euclidean")
-neighbours.fit(features_list)
+def recommend(features_list, feat):
+    neighbours = NearestNeighbors(n_neighbors=5, algorithm="brute", metric="euclidean")
+    neighbours.fit(features_list)
+    distances, indices = neighbours.kneighbors([feat])
+    return indices
 
-dist, indices = neighbours.kneighbors([predict(r'images\1164.jpg')])
 
-print(indices)
+# streamlit code
+st.title("Apparel Recommendation System")
+
+uploaded = st.file_uploader("Choose an image...")
+
+
+def save_uploaded_file(uploadedfile):
+    try:
+        with open(os.path.join("uploads", uploadedfile.name), "wb") as f:
+            f.write(uploadedfile.getbuffer())
+    except:
+        print("0")
+
+
+if uploaded is not None:
+    save_uploaded_file(uploaded)
+    display_image = Image.open(uploaded)
+    st.image(display_image)
+    feat = predict(os.path.join("uploads", uploaded.name))
+    indices = recommend(features_list, feat)
+    col1, col2, col3, col4, col5 = st.columns(5)
+    with col1:
+        st.image(filenames[indices[0][0]])
+    with col2:
+        st.image(filenames[indices[0][1]])
+    with col3:
+        st.image(filenames[indices[0][2]])
+    with col4:
+        st.image(filenames[indices[0][3]])
+    with col5:
+        st.image(filenames[indices[0][4]])
+    
+
+else:
+    st.error("Please upload an image file")
