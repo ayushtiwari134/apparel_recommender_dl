@@ -1,7 +1,7 @@
 # Apparel Recommender using Deep Learning
 
 This project utilizes transfer learning with TensorFlow's ResNet50 model to build an apparel recommendation system. The system scans images and displays the five closest items from the dataset on a Streamlit-based webpage.
-
+**Could not host the project due to the dataset of images being extremely large**
 ## Overview
 
 The goal of this project is to leverage the pre-trained ResNet50 model to extract features from apparel images and recommend visually similar items from the dataset. The process involves:
