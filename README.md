@@ -23,13 +23,8 @@ To run this project locally, follow these steps:
     ```bash
     git clone https://github.com/ayushtiwari134/apparel_recommender_dl.git
     ```
-
-2. Navigate to the project directory:
-    ```bash
-    cd apparel_recommender
-    ```
-
-3. Install the required dependencies:
+    
+2. Install the required dependencies:
     ```bash
     pip install -r requirements.txt
     ```
