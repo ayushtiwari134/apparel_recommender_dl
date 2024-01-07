@@ -71,15 +71,30 @@ if uploaded is not None:
     indices = recommend(features_list, feat)
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
-        st.image(filenames[indices[0][0]])
+        if filenames[indices[0][0]]:
+            st.image(filenames[indices[0][0]])
+        else:
+            st.write("Image was not uploaded")
     with col2:
-        st.image(filenames[indices[0][1]])
+        if filenames[indices[0][1]]:
+            st.image(filenames[indices[0][1]])
+        else:
+            st.write("Image was not uploaded")
     with col3:
-        st.image(filenames[indices[0][2]])
+        if filenames[indices[0][2]]:
+            st.image(filenames[indices[0][2]])
+        else:
+            st.write("Image was not uploaded")
     with col4:
-        st.image(filenames[indices[0][3]])
+        if filenames[indices[0][3]]:
+            st.image(filenames[indices[0][3]])
+        else:
+            st.write("Image was not uploaded")
     with col5:
-        st.image(filenames[indices[0][4]])
+        if filenames[indices[0][4]]:
+            st.image(filenames[indices[0][4]])
+        else:
+            st.write("Image was not uploaded")
     
 
 else:
