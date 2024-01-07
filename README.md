@@ -36,11 +36,13 @@ Run the app locally using Streamlit:
 streamlit run app.py
 ```
 ## Demo
-
+1. Option to upload a file
 <img src="/demo/Screenshot 2024-01-07 235800.png" alt="Alt text" title="Optional title">
 
+2. Uploading a file and displaying the uploaded file
 <img src="/demo/Screenshot 2024-01-07 235944.png" alt="Alt text" title="Optional title">
 
+3. The nearest recommendations from the dataset of 10,000 images are shown below the uploaded file.
 <img src="/demo/Screenshot 2024-01-08 000050.png" alt="Alt text" title="Optional title">
 
 
