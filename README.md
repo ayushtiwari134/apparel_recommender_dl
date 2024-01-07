@@ -42,11 +42,10 @@ streamlit run app.py
 ```
 ## Demo
 
-![App Screenshot 1](demo/Screenshot 2024-01-07 235800.png)
+<img src="/demo/Screenshot 2024-01-07 235800.png" alt="Alt text" title="Optional title">
 
-![App Screenshot 2](demo/Screenshot 2024-01-07 235944.png)
+<img src="/demo/Screenshot 2024-01-07 235944.png" alt="Alt text" title="Optional title">
 
-![App Screenshot 2](demo/Screenshot 2024-01-08 000050.png)
-<!-- Add more screenshots and descriptions as needed -->
+<img src="/demo/Screenshot 2024-01-08 000050.png" alt="Alt text" title="Optional title">
 
 
